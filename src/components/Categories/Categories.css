@@ -1,0 +1,33 @@
+.categories{
+    padding:30px 0;
+}
+
+.categories-container{
+    width:100%;
+    max-width:1300px;
+    margin:0 auto;
+}
+
+.categories-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+.categories-container h2{
+    font-size: 2rem;
+    color: #2F2F2F;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+.categories h2::before,
+.categories h2::after{
+    content: "";
+    display: inline-block;
+    width: 70px;
+    height: 4px;
+    background: #5B3A29;
+    margin: 0 12px;
+    border-radius: 10px;
+}
+

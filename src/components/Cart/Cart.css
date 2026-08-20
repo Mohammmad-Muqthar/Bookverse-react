@@ -1,0 +1,261 @@
+.cart-page {
+    min-height: 100vh;
+    padding: 50px 8%;
+    background: #f8f6f2;
+}
+
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Title */
+
+.cart-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #5B3A29;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.cart-title::before,
+.cart-title::after {
+    content: "";
+    display: inline-block;
+    width: 70px;
+    height: 4px;
+    background: #5B3A29;
+    margin: 0 12px;
+    border-radius: 10px;
+}
+
+/* Main two-column layout */
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* Cart items */
+
+.cart-items-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 90px 1fr auto auto;
+    align-items: center;
+    gap: 20px;
+
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.cart-item img {
+    width: 90px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Book information */
+
+.cart-item-info h3 {
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+    color: #2F2F2F;
+}
+
+.cart-author {
+    margin: 5px 0;
+    color: #777;
+}
+
+.cart-price {
+    margin: 10px 0 0;
+    color: #5B3A29;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Quantity */
+
+.quantity-section {
+    text-align: center;
+}
+
+.quantity-section p,
+.item-total p {
+    margin: 0 0 10px;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #d8cec7;
+    border-radius: 8px;
+    background: #fff;
+    color: #5B3A29;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s ease;
+}
+
+.quantity-btn:hover {
+    background: #5B3A29;
+    color: #fff;
+    border-color: #5B3A29;
+}
+
+.quantity-control span {
+    min-width: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Individual book total */
+
+.item-total {
+    min-width: 75px;
+    text-align: right;
+}
+
+.item-total strong {
+    color: #5B3A29;
+    font-size: 1.05rem;
+}
+
+/* Order Summary */
+
+.order-summary {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 120px;
+}
+
+.order-summary h3 {
+    margin: 0 0 25px;
+    font-size: 1.3rem;
+    color: #5B3A29;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    color: #555;
+}
+
+.free-delivery {
+    color: #388e3c;
+    font-weight: 600;
+}
+
+.summary-line {
+    height: 1px;
+    background: #e5ddd8;
+    margin: 20px 0;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: #2F2F2F;
+}
+
+.summary-total strong {
+    color: #5B3A29;
+}
+
+.checkout-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #5B3A29;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.checkout-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Empty cart */
+
+.empty-cart {
+    background: white;
+    padding: 50px;
+    text-align: center;
+    border-radius: 14px;
+}
+
+.empty-cart h3 {
+    color: #5B3A29;
+}
+
+/* Mobile */
+/* 
+@media (max-width: 900px) {
+
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .order-summary {
+        position: static;
+    }
+
+    .cart-item {
+        grid-template-columns: 70px 1fr;
+    }
+
+    .cart-item img {
+        width: 70px;
+        height: 95px;
+    }
+
+    .quantity-section,
+    .item-total {
+        grid-column: 2;
+        text-align: left;
+    }
+} */

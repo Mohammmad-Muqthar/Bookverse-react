@@ -1,0 +1,70 @@
+.book-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.book-card img {
+    margin-bottom: 15px;
+    width: 100%;
+    height: 280px;
+    object-fit: fill;
+    display: block;
+    transition: 0.3s;
+    border-radius: 10px;
+    /* Inline elements can 
+    sometimes create a small extra space underneath 
+    the image because of the way text sits on a baseline. */
+}
+.book-title{
+    font-size: 1.2rem;
+    color: #2F2F2F;
+    margin: 10px 0 6px;
+}
+
+.book-author{
+    margin: 6px 0;
+    color: #666;
+}
+.book-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.book-price,.book-stock{
+    color: #5B3A29;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.book-rating {
+    color: #444;
+    font-weight: 500;
+}
+.book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+.book-card img:hover{
+    transform: scale(1.01);
+}
+.add-cart-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #5B3A29;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-cart-btn:hover {
+    background: #3F281D;
+    transform: scale(1.03);
+}

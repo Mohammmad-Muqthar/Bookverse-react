@@ -1,0 +1,104 @@
+.signin-page {
+    min-height: 80vh;
+    padding: 60px 20px;
+    background: #f8f5f2;
+}
+
+.signin-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.signin-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.signin-card h1 {
+    text-align: center;
+    color: #5B3A29;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.signin-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.signin-input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.signin-input-group label {
+    color: #4A2C2A;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.signin-input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.signin-input-group input:focus {
+    border-color: #5B3A29;
+}
+
+.signin-submit-btn {
+    width: 100%;
+    padding: 13px;
+    background: #5B3A29;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.signin-submit-btn:hover {
+    background: #4A2C2A;
+}
+
+.signup-text {
+    text-align: center;
+    margin-top: 25px;
+    color: #666;
+}
+
+.signup-text a {
+    color: #5B3A29;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signin-error-message {
+    background: #ffe5e5;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signin-success-message {
+    background: #e4f7e8;
+    color: #2e7d32;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 20px;
+}
