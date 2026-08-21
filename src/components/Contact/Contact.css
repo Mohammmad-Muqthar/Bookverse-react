@@ -311,3 +311,131 @@
     background: #A67C52;
     transform: translateY(-2px);
 }
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .contact {
+        padding: 70px 0;
+    }
+
+    .contact-container {
+        padding: 0 25px;
+    }
+
+    .contact-header {
+        margin-bottom: 40px;
+    }
+
+    .contact-header h1 {
+        font-size: 40px;
+    }
+
+    .contact-header p {
+        font-size: 17px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 35px;
+    }
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .contact {
+        padding: 50px 0;
+    }
+
+    .contact-container {
+        padding: 0 16px;
+    }
+
+    .contact-header {
+        margin-bottom: 30px;
+    }
+
+    .contact-header h1 {
+        font-size: 32px;
+    }
+
+    .contact-header p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .contact-content {
+        gap: 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 25px 20px;
+        border-radius: 14px;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .contact-info > p {
+        font-size: 15px;
+        margin-bottom: 22px;
+    }
+
+    .contact-details {
+        gap: 14px;
+    }
+
+    .contact-item {
+        padding: 14px 16px;
+    }
+
+    .contact-item h3 {
+        font-size: 16px;
+    }
+
+    .contact-item p {
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+    .contact-input-group {
+        margin-bottom: 16px;
+    }
+
+    .contact-input-group label {
+        font-size: 15px;
+    }
+
+    .contact-input-group input,
+    .contact-input-group textarea {
+        padding: 12px;
+        font-size: 15px;
+        box-sizing: border-box;
+    }
+
+    .contact-input-group textarea {
+        min-height: 120px;
+    }
+
+    .contact-submit-btn {
+        padding: 13px;
+        font-size: 16px;
+    }
+}
