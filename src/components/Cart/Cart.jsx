@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "./Cart.css";
 
 const Cart = ({ cart, setCart }) => {
+    const navigate = useNavigate();
 
     const increaseQuantity = (bookId) => {
         setCart(
@@ -142,7 +144,10 @@ const Cart = ({ cart, setCart }) => {
                             <strong>₹{subtotal}</strong>
                         </div>
 
-                        <button className="checkout-btn">
+                        <button
+                            className="checkout-btn"
+                            onClick={() => navigate("/checkout")}
+                            disabled={cart.length === 0}>
                             Proceed to Checkout
                         </button>
 

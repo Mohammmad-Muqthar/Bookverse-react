@@ -2,7 +2,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
-const Navbar = ({ loggedInUser, setLoggedInUser }) => {
+const Navbar = ({ loggedInUser, setLoggedInUser, searchTerm, setSearchTerm }) => {
     const navigate = useNavigate();
 
 
@@ -45,9 +45,16 @@ const Navbar = ({ loggedInUser, setLoggedInUser }) => {
                         <Link to="/contact">Contact</Link>
                     </li>
                 </ul>
-
                 <div className="search-box">
-                    <input type="text" placeholder="Search books..." />
+                    <input
+                        type="text"
+                        placeholder="Search books..."
+                        value={searchTerm}
+                        onChange={(e) => {
+                            setSearchTerm(e.target.value);
+                            navigate("/featuredbook");
+                        }}
+                    />
                 </div>
 
                 {/* <div className="wishlist">

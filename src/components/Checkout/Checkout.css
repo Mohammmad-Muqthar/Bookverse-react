@@ -1,0 +1,339 @@
+/* =========================
+   CHECKOUT PAGE
+========================= */
+
+.checkout-page {
+    min-height: 100vh;
+    padding: 70px 20px;
+    background: #f8f6f2;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.checkout-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.checkout-container > h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #5B3A29;
+    margin-bottom: 45px;
+}
+
+.checkout-container > h1::before,
+.checkout-container > h1::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 4px;
+    background: #A67C52;
+    border-radius: 10px;
+    margin: 0 12px;
+    vertical-align: middle;
+}
+
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* =========================
+   DELIVERY FORM
+========================= */
+
+.checkout-form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(91, 58, 41, 0.10);
+}
+
+.checkout-form h2 {
+    color: #5B3A29;
+    font-size: 1.35rem;
+    margin: 0 0 25px;
+}
+
+.checkout-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.checkout-input label {
+    color: #4A2C2A;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.checkout-input input,
+.checkout-input textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 15px;
+    border: 1px solid #e1d8d1;
+    border-radius: 10px;
+    outline: none;
+    background: #fdfcfb;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: 0.3s ease;
+}
+
+.checkout-input textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.checkout-input input:focus,
+.checkout-input textarea:focus {
+    background: #ffffff;
+    border-color: #A67C52;
+    box-shadow: 0 0 0 4px rgba(166, 124, 82, 0.12);
+}
+
+
+/* =========================
+   PAYMENT SECTION
+========================= */
+
+.payment-section {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 1px solid #eee5df;
+}
+
+.payment-section h2 {
+    margin-bottom: 18px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 18px;
+    margin-bottom: 12px;
+    border: 1px solid #e5ddd7;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #4A2C2A;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.payment-option:hover {
+    border-color: #A67C52;
+    background: #fcf9f6;
+    transform: translateX(3px);
+}
+
+.payment-option input {
+    accent-color: #5B3A29;
+    cursor: pointer;
+}
+
+
+/* =========================
+   PLACE ORDER BUTTON
+========================= */
+
+.place-order-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #5B3A29, #7A523A);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(91, 58, 41, 0.18);
+    transition: 0.3s ease;
+}
+
+.place-order-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(91, 58, 41, 0.25);
+}
+
+
+/* =========================
+   ORDER SUMMARY
+========================= */
+
+.checkout-summary {
+    position: sticky;
+    top: 100px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(91, 58, 41, 0.10);
+}
+
+.checkout-summary h2 {
+    color: #5B3A29;
+    font-size: 1.35rem;
+    margin: 0 0 25px;
+}
+
+.checkout-book {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee8e3;
+}
+
+.checkout-book h3 {
+    margin: 0 0 6px;
+    color: #2F2F2F;
+    font-size: 1rem;
+}
+
+.checkout-book p {
+    margin: 0;
+    color: #8a7d76;
+    font-size: 0.85rem;
+}
+
+.checkout-book strong {
+    color: #5B3A29;
+    white-space: nowrap;
+}
+
+.checkout-line {
+    height: 1px;
+    background: #e8ded8;
+    margin: 20px 0;
+}
+
+.checkout-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #2F2F2F;
+    font-size: 1.1rem;
+}
+
+.checkout-total strong {
+    color: #5B3A29;
+    font-size: 1.3rem;
+}
+
+
+/* =========================
+   SUCCESS PAGE
+========================= */
+
+.payment-success {
+    width: 100%;
+    max-width: 550px;
+    margin: 50px auto;
+    padding: 55px 35px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(91, 58, 41, 0.12);
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e9f7ed;
+    color: #2e7d32;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.payment-success h1 {
+    color: #5B3A29;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.payment-success p {
+    color: #786d68;
+    line-height: 1.7;
+    margin: 7px 0;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-summary {
+        position: static;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .checkout-page {
+        padding: 45px 15px;
+    }
+
+    .checkout-container > h1 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .checkout-container > h1::before,
+    .checkout-container > h1::after {
+        width: 35px;
+        margin: 0 7px;
+    }
+
+    .checkout-form,
+    .checkout-summary {
+        padding: 25px 20px;
+        border-radius: 14px;
+    }
+
+    .checkout-book {
+        font-size: 0.9rem;
+    }
+
+    .payment-success {
+        margin: 20px auto;
+        padding: 45px 20px;
+    }
+
+    .payment-success h1 {
+        font-size: 1.6rem;
+    }
+}

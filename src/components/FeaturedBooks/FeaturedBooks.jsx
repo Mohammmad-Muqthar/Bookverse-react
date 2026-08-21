@@ -6,11 +6,23 @@ import { categories } from "../../data/categories";
 import { books } from "../../data/books";
 import BookCard from "../BookCard/BookCard";
 
-const FeaturedBooks = ({ selectedCategory, setSelectedCategory, setFilteredBooks, filteredBooks }) => {
+const FeaturedBooks = ({ selectedCategory, setSelectedCategory, setFilteredBooks, filteredBooks, searchTerm }) => {
 
     // this will do if displayed book is greater than 0 filteredbook else all the books
-const booksToDisplay =
-    selectedCategory ? filteredBooks : books;
+    let booksToDisplay = selectedCategory
+        ? filteredBooks
+        : books;
+
+// live search
+    if (searchTerm && searchTerm.trim() !== "") {
+
+        const search = searchTerm.toLowerCase().trim();
+
+        booksToDisplay = booksToDisplay.filter((book) =>
+            book.title.toLowerCase().includes(search) ||
+            book.author.toLowerCase().includes(search)
+        );
+    }
 
     const handleCategoryClick = (categoryId) => {
     const filtered = books.filter(

@@ -13,6 +13,7 @@ import Categories from "./components/Categories/Categories";
 import FeaturedBooks from "./components/FeaturedBooks/FeaturedBooks";
 import BookDetail from "./components/BookDetail/BookDetail";
 import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
 
 import TopSellers from "./components/TopSellers/TopSellers";
 import MostViewed from "./components/MostViewed/MostViewed";
@@ -31,6 +32,9 @@ function App() {
 
   // Cart State
   const [cart, setCart] = useState([]);
+
+  // Search State
+  const [searchTerm, setSearchTerm] = useState("");
 
 
   // Logged In User State
@@ -85,6 +89,8 @@ function App() {
       <Navbar
         loggedInUser={loggedInUser}
         setLoggedInUser={setLoggedInUser}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
       />
 
 
@@ -134,6 +140,7 @@ function App() {
               selectedCategory={selectedCategory}
               setFilteredBooks={setFilteredBooks}
               setSelectedCategory={setSelectedCategory}
+              searchTerm={searchTerm}
             />
           }
         />
@@ -170,6 +177,16 @@ function App() {
               cart={cart}
               setCart={setCart}
               loggedInUser={loggedInUser}
+            />
+          }
+        />
+
+        <Route
+          path="/checkout"
+          element={
+            <Checkout
+              cart={cart}
+              setCart={setCart}
             />
           }
         />
