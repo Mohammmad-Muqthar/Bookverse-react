@@ -1,4 +1,4 @@
-
+import logo from "../../assets/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
@@ -18,8 +18,13 @@ const Navbar = ({ loggedInUser, setLoggedInUser, searchTerm, setSearchTerm }) =>
         <nav>
             <div className="navbar-container">
 
+                {/* <div className="logo">
+                    <Link to="/">BookVerse</Link>
+                </div> */}
                 <div className="logo">
-                    BookVerse
+                    <Link to="/">
+                        <img src={logo} alt="BookVerse Logo" />
+                    </Link>
                 </div>
 
                 <ul className="nav-links">
