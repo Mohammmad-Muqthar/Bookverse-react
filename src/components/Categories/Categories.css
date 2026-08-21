@@ -1,33 +1,107 @@
-.categories{
-    padding:30px 0;
+.categories {
+    padding: 60px 20px;
+    background: #fffaf7;
 }
 
-.categories-container{
-    width:100%;
-    max-width:1300px;
-    margin:0 auto;
+.categories-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-.categories-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-.categories-container h2{
-    font-size: 2rem;
-    color: #2F2F2F;
+.categories-container h2 {
+    font-size: 2.2rem;
+    color: #5B3A29;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
     position: relative;
 }
+
+/* Decorative lines */
 .categories h2::before,
-.categories h2::after{
+.categories h2::after {
     content: "";
     display: inline-block;
-    width: 70px;
-    height: 4px;
-    background: #5B3A29;
-    margin: 0 12px;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #5B3A29, #A67C52);
+    margin: 0 14px;
     border-radius: 10px;
+    vertical-align: middle;
 }
 
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .categories {
+        padding: 50px 25px;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .categories-container h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .categories {
+        padding: 40px 15px;
+    }
+
+    .categories-container h2 {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+
+    .categories h2::before,
+    .categories h2::after {
+        width: 35px;
+        margin: 0 8px;
+        height: 3px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+    .categories-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .categories h2::before,
+    .categories h2::after {
+        width: 20px;
+        margin: 0 5px;
+    }
+}

@@ -1,55 +1,258 @@
-.most-viewed{
-    padding: 30px 0;
+.most-viewed {
+    padding: 60px 20px;
+    background: #f3e8df;
 }
 .most-viewed-container {
-    width: 1300px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1300px;
     margin: 0 auto;
 }
+
+
+/* =====================
+   SECTION HEADING
+===================== */
+
+.most-viewed-container h2 {
+    font-size: 2.3rem;
+    color: #5B3A29;
+    text-align: center;
+    margin-bottom: 45px;
+    font-weight: 800;
+}
+
+.most-viewed-container h2::before,
+.most-viewed-container h2::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    background: #e5c5ad;
+    border-radius: 10px;
+    margin: 0 14px;
+    vertical-align: middle;
+}
+
+
+/* =====================
+   GRID
+===================== */
+
 .most-viewed-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 25px;
 }
-.most-viewed-item{
-    padding: 20px;
+
+
+/* =====================
+   MOST VIEWED CARD
+===================== */
+
+.most-viewed-item {
+    position: relative;
+
+    padding: 14px;
     text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 20px;
+
     cursor: pointer;
+    overflow: hidden;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease;
 }
+
+
+/* Viewed Badge */
+
+.most-viewed-item::before {
+    content: "👁 Most Viewed";
+
+    position: absolute;
+    top: 22px;
+    right: 0;
+
+    padding: 7px 13px;
+
+    background: #A67C52;
+    color: white;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    border-radius: 18px 0 0 18px;
+
+    z-index: 2;
+}
+
+
+/* Image */
+
 .most-viewed-item img {
     width: 100%;
     height: 300px;
+
     object-fit: cover;
-    border-radius: 10px;
+    display: block;
+
+    border-radius: 14px;
+
+    transition: transform 0.5s ease;
 }
-.most-viewed-item h3::before,
-.most-viewed-item h3::after {
-    margin: 15px 0 8px;
-    font-size: 20px;
+
+
+/* Title */
+
+.most-viewed-item h3 {
+    margin: 16px 0 7px;
+
+    color: #4A2C2A;
+    font-size: 1.15rem;
+    font-weight: 750;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
+
+/* Details */
+
 .most-viewed-item p {
-    margin: 5px 0;
-    font-size: 16px;
+    margin: 6px 0;
+    color: #78655d;
+    font-size: 0.92rem;
 }
+
+/* Price */
+
 .most-viewed-item p:last-child {
-    font-weight: bold;
-    font-size: 18px;
+    margin-top: 10px;
+
+    color: #A67C52;
+    font-weight: 800;
+    font-size: 1.1rem;
 }
-.most-viewed-container h2{
-    font-size:2rem;
-    color:#2F2F2F;
-    text-align:center;
-    margin-bottom:40px;
+
+
+/* Hover */
+
+.most-viewed-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
 }
-.most-viewed-container h2::before,
-.most-viewed-container h2::after{
-    content:"";
-    display:inline-block;
-    width:70px;
-    height:4px;
-    background:#5B3A29;
-    border-radius:10px;
-    margin:0 12px;
+
+.most-viewed-item:hover img {
+    transform: scale(1.07);
+}
+
+
+/* =====================
+   TABLET
+===================== */
+
+@media (max-width: 1050px) {
+
+    .most-viewed-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .most-viewed-item img {
+        height: 260px;
+    }
+}
+
+
+/* =====================
+   SMALL TABLET
+===================== */
+
+@media (max-width: 750px) {
+
+    .most-viewed {
+        padding: 55px 20px;
+    }
+
+    .most-viewed-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 500px) {
+
+    .most-viewed {
+        padding: 45px 15px;
+    }
+
+    .most-viewed-container h2 {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+
+    .most-viewed-container h2::before,
+    .most-viewed-container h2::after {
+        width: 30px;
+        margin: 0 7px;
+    }
+
+    .most-viewed-item {
+        padding: 10px;
+        border-radius: 15px;
+    }
+
+    .most-viewed-item::before {
+        top: 18px;
+
+        padding: 5px 9px;
+        font-size: 0.6rem;
+
+        border-radius: 15px 0 0 15px;
+    }
+
+    .most-viewed-item img {
+        height: 210px;
+        border-radius: 10px;
+    }
+
+    .most-viewed-item h3 {
+        margin: 12px 0 5px;
+        font-size: 0.95rem;
+    }
+
+    .most-viewed-item p {
+        margin: 4px 0;
+        font-size: 0.8rem;
+    }
+
+    .most-viewed-item p:last-child {
+        margin-top: 7px;
+        font-size: 0.95rem;
+    }
+}
+
+
+/* =====================
+   VERY SMALL MOBILE
+===================== */
+
+@media (max-width: 350px) {
+
+    .most-viewed-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .most-viewed-item img {
+        height: 260px;
+    }
 }

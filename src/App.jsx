@@ -3,150 +3,216 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
-// components
+/* COMPONENTS*/
+
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
 import Categories from "./components/Categories/Categories";
+
 import FeaturedBooks from "./components/FeaturedBooks/FeaturedBooks";
-import Cart from "./components/Cart/Cart";
 import BookDetail from "./components/BookDetail/BookDetail";
-import Footer from "./components/Footer/Footer";
+import Cart from "./components/Cart/Cart";
 
 import TopSellers from "./components/TopSellers/TopSellers";
 import MostViewed from "./components/MostViewed/MostViewed";
 import NewArrivals from "./components/NewArrivals/NewArrivals";
+
 import SignUp from "./components/SignUp/SignUp";
 import SignIn from "./components/SignIn/SignIn";
+
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 
+
 function App() {
 
+  /* STATE*/
+
+  // Cart State
   const [cart, setCart] = useState([]);
 
+
+  // Logged In User State
   const [loggedInUser, setLoggedInUser] = useState(() => {
     const savedUser = localStorage.getItem("bookverseLoggedInUser");
 
     return savedUser ? JSON.parse(savedUser) : null;
   });
-  
-  
-const [filteredBooks, setFilteredBooks] = useState([]);
-
-const [selectedCategory, setSelectedCategory] = useState(null);
 
 
-const [mes, setnew] = useState("");
-const topmessage = (book) => {
-    setnew(`This is the top selled book ${book.title}`);
+  // Category Filter State
+  const [filteredBooks, setFilteredBooks] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
-    setTimeout(() => {
-        setnew("");
-    }, 2000);
-};
 
-const viewmessage = (book) => {
-    setnew(`This is the Most viewed book ${book.title}`);
+  // Popup Message State
+  const [mes, setMes] = useState("");
+
+
+  /* MESSAGE FUNCTIONS */
+
+  const showMessage = (message) => {
+    setMes(message);
 
     setTimeout(() => {
-        setnew("");
+      setMes("");
     }, 2000);
-};
+  };
 
-const newmessage = (book) => {
-    setnew(`This is the new arrived book ${book.title}`);
 
-    setTimeout(() => {
-        setnew("");
-    }, 2000);
-};
+  const topMessage = (book) => {
+    showMessage(`This is the top selling book: ${book.title}`);
+  };
+
+
+  const viewMessage = (book) => {
+    showMessage(`This is the most viewed book: ${book.title}`);
+  };
+
+
+  const newMessage = (book) => {
+    showMessage(`This is the new arrival: ${book.title}`);
+  };
+
+
+  /* APP*/
 
   return (
     <BrowserRouter>
 
+      {/* Navbar */}
       <Navbar
-  loggedInUser={loggedInUser}
-  setLoggedInUser={setLoggedInUser}
-/>
+        loggedInUser={loggedInUser}
+        setLoggedInUser={setLoggedInUser}
+      />
+
+
+      {/* Popup Message */}
       {mes && <div className="popup">{mes}</div>}
 
+
+      {/* Routes */}
       <Routes>
 
-        {/* Home Page */}
+        {/*HOME*/}
+
         <Route
           path="/"
           element={
             <>
-              <Hero /> 
-            <Categories setFilteredBooks={setFilteredBooks}
-            setSelectedCategory={setSelectedCategory}
-             /> 
-            <TopSellers
-            message={topmessage} /> 
-           
-            <MostViewed 
-             message={viewmessage} />
-            <NewArrivals 
-            message={newmessage}/>
-            </>       }
+              <Hero />
+
+              <Categories
+                setFilteredBooks={setFilteredBooks}
+                setSelectedCategory={setSelectedCategory}
+              />
+
+              <TopSellers
+                message={topMessage}
+              />
+
+              <MostViewed
+                message={viewMessage}
+              />
+
+              <NewArrivals
+                message={newMessage}
+              />
+            </>
+          }
         />
-<Route
-  path="/featuredbook"
+
+
+        {/*FEATURED BOOKS*/}
+
+        <Route
+          path="/featuredbook"
           element={
-            
-             <FeaturedBooks
-                // cart={cart}
-                // setCart={setCart}
-    filteredBooks={filteredBooks}
-    selectedCategory={selectedCategory}       
-    setFilteredBooks={setFilteredBooks}  
-    setSelectedCategory={setSelectedCategory} />
-              
-       }
+            <FeaturedBooks
+              filteredBooks={filteredBooks}
+              selectedCategory={selectedCategory}
+              setFilteredBooks={setFilteredBooks}
+              setSelectedCategory={setSelectedCategory}
+            />
+          }
         />
-              
 
-            
 
-        {/* Books Page */}
+        {/*BOOKS*/}
+
         <Route
           path="/books"
           element={<h1>Books Page</h1>}
         />
-         <Route
+
+
+        {/*BOOK DETAIL */}
+
+        <Route
+          path="/book/:id"
+          element={
+            <BookDetail
+              cart={cart}
+              setCart={setCart}
+              loggedInUser={loggedInUser}
+            />
+          }
+        />
+
+
+        {/*CART*/}
+
+        <Route
           path="/cart"
           element={
             <Cart
               cart={cart}
-              setCart={setCart} 
-              loggedInUser={loggedInUser}/>}/>
+              setCart={setCart}
+              loggedInUser={loggedInUser}
+            />
+          }
+        />
 
-                    <Route
-          path="/book/:id"
+
+        {/*AUTHENTICATION*/}
+
+        <Route
+          path="/signup"
+          element={<SignUp />}
+        />
+
+        <Route
+          path="/signin"
           element={
-            <BookDetail
-                          cart={cart}
-              setCart={setCart} />}/>
+            <SignIn
+              setLoggedInUser={setLoggedInUser}
+            />
+          }
+        />
 
 
-  <Route
-    path="/signup"
-    element={<SignUp />}
-  />
+        {/* OTHER PAGES*/}
 
-  <Route path="/signin" element={<SignIn 
-    setLoggedInUser={setLoggedInUser}/> }/>
+        <Route
+          path="/about"
+          element={<About />}
+        />
 
-
-      <Route path="/About" element={<About/> }/>
-
-      
-      <Route path="/contact" element={<Contact/> }/>
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
 
       </Routes>
-            <Footer />
+
+
+      {/* Footer */}
+      <Footer />
+
     </BrowserRouter>
   );
 }
+
 
 export default App;

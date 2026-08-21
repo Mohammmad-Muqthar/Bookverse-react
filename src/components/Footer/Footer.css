@@ -1,52 +1,222 @@
 .footer {
-    background: #2F2F2F;
-    padding: 30px 0 30px;
+    background: linear-gradient(135deg, #2F2F2F, #3f2a22);
+    padding: 60px 20px 20px;
     color: white;
 }
 
 .footer-container {
-    width: 1300px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1300px;
     margin: 0 auto;
 }
+
+/* =====================
+   FOOTER GRID
+===================== */
 
 .footer-content {
     display: grid;
     grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
-    gap: 50px;
+    gap: 45px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
-/* 1st child styling footerabout */
+
+
+/* =====================
+   ABOUT
+===================== */
+
 .footer-about h2 {
-    font-size: 30px;
+    font-size: 2rem;
     margin-bottom: 18px;
-    color: #ffffff;
+    color: #e5c5ad;
     cursor: pointer;
+    letter-spacing: 1px;
 }
 
 .footer-about p {
-    line-height: 1.7;
-    color: #cfcfcf;
-    max-width: 280px;
+    line-height: 1.8;
+    color: #d5c8c1;
+    max-width: 300px;
+    font-size: 0.95rem;
 }
 
 
-/* 2nd 3rd 4th child styling */
+/* =====================
+   HEADINGS
+===================== */
+
 .footer-links h3,
 .footer-contact h3,
 .footer-social h3 {
-    font-size: 20px;
-    margin-bottom: 18px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
     color: #ffffff;
+    position: relative;
 }
 
-.footer-links p,
-.footer-contact p,
+
+/* Decorative line */
+
+.footer-links h3::after,
+.footer-contact h3::after,
+.footer-social h3::after {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 3px;
+    background: #A67C52;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+
+/* =====================
+   QUICK LINKS
+   React Router Link = <a>
+===================== */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-links a {
+    display: block;
+    margin: 7px 0;
+
+    color: #d5c8c1;
+    font-size: 0.9rem;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e5c5ad;
+    transform: translateX(5px);
+}
+
+
+/* =====================
+   CONTACT
+===================== */
+
+.footer-contact p {
+    margin: 12px 0;
+    color: #d5c8c1;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-contact p:hover {
+    color: white;
+}
+
+
+/* =====================
+   SOCIAL
+===================== */
+
 .footer-social p {
     margin: 12px 0;
-    color: #cfcfcf;
-    font-size: 15px;
-}
-.footer-links p,
-.footer-social p{
+    color: #d5c8c1;
+    font-size: 0.9rem;
     cursor: pointer;
+
+    transition: color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.footer-social p:hover {
+    color: #e5c5ad;
+    transform: translateX(5px);
+}
+
+
+/* =====================
+   TABLET
+===================== */
+
+@media (max-width: 1000px) {
+
+    .footer {
+        padding: 50px 25px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 600px) {
+
+    .footer {
+        padding: 45px 20px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-about p {
+        margin: 0 auto;
+    }
+
+    /* Center headings */
+    .footer-links h3::after,
+    .footer-contact h3::after,
+    .footer-social h3::after {
+        margin: 8px auto 0;
+    }
+
+    /* Center Quick Links */
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-links a {
+        margin: 6px 0;
+    }
+
+    .footer-links a:hover,
+    .footer-social p:hover {
+        transform: translateY(-2px);
+    }
+}
+
+
+/* =====================
+   SMALL MOBILE
+===================== */
+
+@media (max-width: 380px) {
+
+    .footer {
+        padding: 40px 15px 20px;
+    }
+
+    .footer-about h2 {
+        font-size: 1.7rem;
+    }
+
+    .footer-about p,
+    .footer-links a,
+    .footer-contact p,
+    .footer-social p {
+        font-size: 0.85rem;
+    }
 }

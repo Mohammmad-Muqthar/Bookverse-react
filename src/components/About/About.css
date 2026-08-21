@@ -86,3 +86,133 @@
     margin-top: 12px;
     border-radius: 5px;
 }
+
+
+/* =====================
+   TABLET
+===================== */
+
+@media (max-width: 900px) {
+
+    .about {
+        padding: 70px 20px;
+    }
+
+    .about-container {
+        padding: 0;
+    }
+
+    .about-header {
+        margin-bottom: 45px;
+    }
+
+    .about-header h1 {
+        font-size: 40px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .about-story,
+    .about-mission {
+        padding: 35px;
+    }
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 600px) {
+
+    .about {
+        padding: 55px 15px;
+        min-height: auto;
+    }
+
+    .about-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .about-header {
+        margin-bottom: 35px;
+    }
+
+    .about-header h1 {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .about-header p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-story,
+    .about-mission {
+        padding: 25px 20px;
+        border-radius: 14px;
+    }
+
+    .about-story h2,
+    .about-mission h2 {
+        font-size: 23px;
+        margin-bottom: 16px;
+    }
+
+    .about-story p,
+    .about-mission p {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+
+    .about-story:hover,
+    .about-mission:hover {
+        transform: translateY(-4px);
+    }
+}
+
+
+/* =====================
+   SMALL MOBILE
+===================== */
+
+@media (max-width: 380px) {
+
+    .about {
+        padding: 45px 12px;
+    }
+
+    .about-header h1 {
+        font-size: 28px;
+    }
+
+    .about-header p {
+        font-size: 14px;
+    }
+
+    .about-story,
+    .about-mission {
+        padding: 20px 15px;
+    }
+
+    .about-story h2,
+    .about-mission h2 {
+        font-size: 21px;
+    }
+
+    .about-story p,
+    .about-mission p {
+        font-size: 14px;
+    }
+}

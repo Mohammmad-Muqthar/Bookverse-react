@@ -1,70 +1,201 @@
 .book-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 18px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-}
-.book-card img {
-    margin-bottom: 15px;
-    width: 100%;
-    height: 280px;
-    object-fit: fill;
-    display: block;
-    transition: 0.3s;
-    border-radius: 10px;
-    /* Inline elements can 
-    sometimes create a small extra space underneath 
-    the image because of the way text sits on a baseline. */
-}
-.book-title{
-    font-size: 1.2rem;
-    color: #2F2F2F;
-    margin: 10px 0 6px;
+
+    border: 1px solid #eee1d9;
+
+    box-shadow: 0 8px 25px rgba(91, 58, 41, 0.10);
+
+    overflow: hidden;
+
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease;
 }
 
-.book-author{
-    margin: 6px 0;
-    color: #666;
+.book-card img {
+    margin-bottom: 16px;
+
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: 12px;
+
+    transition: transform 0.5s ease;
 }
+
+/* Book title */
+
+.book-title {
+    font-size: 1.15rem;
+    color: #4A2C2A;
+    margin: 10px 0 6px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Author */
+
+.book-author {
+    margin: 6px 0;
+    color: #806f68;
+    font-size: 0.92rem;
+}
+
+/* Price and stock */
+
 .book-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    margin-top: 12px;
+    gap: 10px;
 }
-.book-price,.book-stock{
+
+.book-price,
+.book-stock {
     color: #5B3A29;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .book-rating {
-    color: #444;
-    font-weight: 500;
+    color: #A67C52;
+    font-weight: 600;
+    margin-top: 8px;
 }
+
+/* Hover effect */
+
 .book-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+    transform: translateY(-9px);
+    box-shadow: 0 18px 38px rgba(91, 58, 41, 0.18);
 }
-.book-card img:hover{
-    transform: scale(1.01);
+
+.book-card:hover img {
+    transform: scale(1.05);
 }
+
+/* Add to cart button */
+
 .add-cart-btn {
     width: 100%;
     margin-top: 18px;
     padding: 12px;
+
     border: none;
-    border-radius: 8px;
-    background: #5B3A29;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #5B3A29, #A67C52);
     color: white;
-    font-size: 1rem;
-    font-weight: bold;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
     cursor: pointer;
-    transition: 0.3s;
+
+    box-shadow: 0 5px 12px rgba(91, 58, 41, 0.16);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 .add-cart-btn:hover {
-    background: #3F281D;
-    transform: scale(1.03);
+    transform: translateY(-2px);
+    box-shadow: 0 9px 18px rgba(91, 58, 41, 0.25);
+}
+
+
+/* =====================
+   TABLET
+===================== */
+
+@media (max-width: 1000px) {
+
+    .book-card {
+        padding: 14px;
+    }
+
+    .book-card img {
+        height: 250px;
+    }
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 500px) {
+
+    .book-card {
+        padding: 10px;
+        border-radius: 14px;
+    }
+
+    .book-card img {
+        height: 210px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .book-title {
+        font-size: 0.95rem;
+        margin: 8px 0 5px;
+    }
+
+    .book-author {
+        font-size: 0.8rem;
+    }
+
+    .book-bottom {
+        flex-direction: column;
+        gap: 4px;
+        margin-top: 8px;
+    }
+
+    .book-price,
+    .book-stock {
+        font-size: 0.85rem;
+    }
+
+    .book-rating {
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+
+    .add-cart-btn {
+        margin-top: 12px;
+        padding: 10px 5px;
+        font-size: 0.8rem;
+        border-radius: 8px;
+    }
+}
+
+
+/* =====================
+   VERY SMALL MOBILE
+===================== */
+
+@media (max-width: 350px) {
+
+    .book-card img {
+        height: 190px;
+    }
+
+    .book-title {
+        font-size: 0.85rem;
+    }
+
+    .add-cart-btn {
+        font-size: 0.75rem;
+    }
 }

@@ -1,71 +1,217 @@
-.featured-books{
-    padding:50px 0;
-     min-height: 70vh;
+.featured-books {
+    padding: 65px 20px;
+    min-height: 70vh;
+    background: #ffffff;
 }
 
-.featured-books-container{
-    width:100%;
-    max-width:1200px;
-    margin:0 auto;
-    height: 100%;
+.featured-books-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.featured-books h2{
-    font-size:2rem;
-    color:#2F2F2F;
-    text-align:center;
-    margin-bottom:40px;
+/* Section Heading */
+
+.featured-books h2 {
+    font-size: 2.3rem;
+    color: #5B3A29;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 .featured-books h2::before,
-.featured-books h2::after{
-    content:"";
-    display:inline-block;
-    width:70px;
-    height:4px;
-    background:#5B3A29;
-    border-radius:10px;
-    margin:0 12px;
-}
-
-.books-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
+.featured-books h2::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #5B3A29, #A67C52);
+    border-radius: 10px;
+    margin: 0 14px;
+    vertical-align: middle;
 }
 
 
-/* css for category filter */
+/* =====================
+   BOOK GRID
+===================== */
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+/* =====================
+   CATEGORY FILTER
+===================== */
+
 .book-filter {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
+    gap: 12px;
+    margin-bottom: 35px;
     flex-wrap: wrap;
 }
 
 .book-filter p {
     margin: 0;
-    padding: 10px 18px;
-    font-size: 18px;
+    padding: 10px 20px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #5B3A29;
+    background: #fffaf7;
+
     cursor: pointer;
-    border: 1px solid #b67d60;
-    border-radius: 20px;
+
+    border: 1px solid #d9b9a7;
+    border-radius: 25px;
+
+    transition: all 0.3s ease;
+}
+
+.book-filter p:hover {
+    background: #5B3A29;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(91, 58, 41, 0.18);
 }
 
 
+/* =====================
+   NO BOOKS MESSAGE
+===================== */
 
 .no-books-message {
     width: 100%;
     text-align: center;
-    margin-bottom: 30px;
+    margin: 40px 0;
+    padding: 35px 20px;
+
+    background: #fffaf7;
+    border: 1px dashed #d9b9a7;
+    border-radius: 16px;
 }
 
 .no-books-message h3 {
-    font-size: 28px;
+    font-size: 1.6rem;
+    color: #5B3A29;
     margin-bottom: 10px;
 }
 
 .no-books-message p {
-    font-size: 18px;
+    font-size: 1rem;
+    color: #77645c;
+}
+
+
+/* =====================
+   TABLET
+===================== */
+
+@media (max-width: 1000px) {
+
+    .featured-books {
+        padding: 55px 25px;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .featured-books h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* =====================
+   SMALL TABLET
+===================== */
+
+@media (max-width: 750px) {
+
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 500px) {
+
+    .featured-books {
+        padding: 45px 15px;
+    }
+
+    .featured-books h2 {
+        font-size: 1.7rem;
+        margin-bottom: 28px;
+    }
+
+    .featured-books h2::before,
+    .featured-books h2::after {
+        width: 30px;
+        margin: 0 7px;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .book-filter {
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+
+    .book-filter p {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .no-books-message {
+        padding: 25px 15px;
+        margin: 25px 0;
+    }
+
+    .no-books-message h3 {
+        font-size: 1.3rem;
+    }
+
+    .no-books-message p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* =====================
+   VERY SMALL MOBILE
+===================== */
+
+@media (max-width: 350px) {
+
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-books h2 {
+        font-size: 1.5rem;
+    }
+
+    .featured-books h2::before,
+    .featured-books h2::after {
+        width: 18px;
+        margin: 0 4px;
+    }
 }

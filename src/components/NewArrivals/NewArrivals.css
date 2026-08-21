@@ -1,55 +1,232 @@
-.New-Arrivals{
-    padding: 30px 0;
+.New-Arrivals {
+    padding: 60px 20px;
+    background: #fffaf7;
 }
+
 .New-Arrivals-container {
-    width: 1300px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1300px;
     margin: 0 auto;
 }
+
+
+/* Heading */
+
+.New-Arrivals-container h2 {
+    font-size: 2.3rem;
+    color: #5B3A29;
+    text-align: center;
+    margin-bottom: 45px;
+    font-weight: 800;
+}
+
+.New-Arrivals-container h2::before,
+.New-Arrivals-container h2::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    background: #A67C52;
+    border-radius: 10px;
+    margin: 0 14px;
+    vertical-align: middle;
+}
+
+
+/* Grid */
+
 .New-Arrivals-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
-.New-Arrivals-item{
-    padding: 20px;
+
+
+/* Card */
+
+.New-Arrivals-item {
+    position: relative;
+    padding: 12px;
     text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border: 1px solid #eadbd1;
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(91, 58, 41, 0.1);
     cursor: pointer;
+    overflow: hidden;
+    transition: 0.35s ease;
 }
+
+
+/* New badge */
+
+.New-Arrivals-item::before {
+    content: "NEW";
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: #5B3A29;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+
+/* Image */
+
 .New-Arrivals-item img {
     width: 100%;
     height: 300px;
     object-fit: cover;
-    border-radius: 10px;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
 }
-.New-Arrivals-item h3::before,
-.New-Arrivals-item h3::after {
-    margin: 15px 0 8px;
-    font-size: 20px;
+
+
+/* Book title */
+
+.New-Arrivals-item h3 {
+    margin: 16px 0 7px;
+    color: #4A2C2A;
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
+
+/* Other details */
+
 .New-Arrivals-item p {
     margin: 5px 0;
-    font-size: 16px;
+    color: #78655d;
+    font-size: 0.9rem;
 }
+
+
+/* Price */
+
 .New-Arrivals-item p:last-child {
-    font-weight: bold;
-    font-size: 18px;
+    margin-top: 10px;
+    color: #A67C52;
+    font-weight: 800;
+    font-size: 1.05rem;
 }
-.New-Arrivals-container h2{
-    font-size:2rem;
-    color:#2F2F2F;
-    text-align:center;
-    margin-bottom:40px;
+
+
+/* Hover */
+
+.New-Arrivals-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(91, 58, 41, 0.18);
 }
-.New-Arrivals-container h2::before,
-.New-Arrivals-container h2::after{
-    content:"";
-    display:inline-block;
-    width:70px;
-    height:4px;
-    background:#5B3A29;
-    border-radius:10px;
-    margin:0 12px;
+
+.New-Arrivals-item:hover img {
+    transform: scale(1.06);
+}
+
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+
+    .New-Arrivals-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .New-Arrivals-item img {
+        height: 260px;
+    }
+}
+
+
+/* Small Tablet */
+
+@media (max-width: 750px) {
+
+    .New-Arrivals {
+        padding: 50px 20px;
+    }
+
+    .New-Arrivals-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .New-Arrivals {
+        padding: 45px 15px;
+    }
+
+    .New-Arrivals-container h2 {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+
+    .New-Arrivals-container h2::before,
+    .New-Arrivals-container h2::after {
+        width: 30px;
+        margin: 0 7px;
+    }
+
+    .New-Arrivals-grid {
+        gap: 12px;
+    }
+
+    .New-Arrivals-item {
+        padding: 9px;
+        border-radius: 14px;
+    }
+
+    .New-Arrivals-item::before {
+        top: 15px;
+        left: 15px;
+        padding: 5px 8px;
+        font-size: 0.55rem;
+    }
+
+    .New-Arrivals-item img {
+        height: 210px;
+        border-radius: 9px;
+    }
+
+    .New-Arrivals-item h3 {
+        margin: 10px 0 5px;
+        font-size: 0.9rem;
+    }
+
+    .New-Arrivals-item p {
+        font-size: 0.75rem;
+        margin: 4px 0;
+    }
+
+    .New-Arrivals-item p:last-child {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Very small screens */
+
+@media (max-width: 350px) {
+
+    .New-Arrivals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .New-Arrivals-item img {
+        height: 270px;
+    }
 }
